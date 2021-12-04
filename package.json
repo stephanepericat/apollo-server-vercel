@@ -1,5 +1,5 @@
 {
-  "name": "gql-mongo-vercel",
+  "name": "apollo-server-vercel",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
