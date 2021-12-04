@@ -25,7 +25,7 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const startApolloServer = async(app) => {
+const startApolloServer = async(app, httpServer) => {
   const server = new ApolloServer({
     typeDefs,
     resolvers,
@@ -36,6 +36,6 @@ const startApolloServer = async(app) => {
   server.applyMiddleware({ app });
 }
 
-startApolloServer(app);
+startApolloServer(app, httpServer);
 
 export default httpServer;
