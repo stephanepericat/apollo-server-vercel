@@ -4,10 +4,6 @@
   "main": "index.js",
   "license": "MIT",
   "type": "module",
-  "scripts": {
-    "dev": "nodemon server",
-    "start": "node server"
-  },
   "dependencies": {
     "apollo-datasource-rest": "^3.4.0",
     "apollo-server-core": "^3.5.0",
