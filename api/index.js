@@ -1,11 +1,12 @@
 import { ApolloServer, gql } from 'apollo-server-express';
-// import { ApolloServerPluginDrainHttpServer } from 'apollo-server-core';
-// import http from "http";
+import { ApolloServerPluginDrainHttpServer } from 'apollo-server-core';
+import http from "http";
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 
 const app = express();
+const httpServer = http.createServer(app);
 
 const typeDefs = gql`
   type Query {
@@ -28,13 +29,13 @@ const startApolloServer = async(app) => {
   const server = new ApolloServer({
     typeDefs,
     resolvers,
-    // plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
+    plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
   });
 
   await server.start();
-  app.use(server.getMiddleware());
+  server.applyMiddleware({ app });
 }
 
 startApolloServer(app);
 
-export default app;
+export default httpServer;
