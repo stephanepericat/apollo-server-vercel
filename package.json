@@ -13,7 +13,6 @@
     "apollo-server-errors": "^3.3.0",
     "apollo-server-express": "^3.5.0",
     "consola": "^2.15.3",
-    "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "graphql": "^16.0.1"
